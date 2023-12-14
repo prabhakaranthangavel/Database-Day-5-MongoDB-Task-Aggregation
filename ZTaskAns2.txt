@@ -1,0 +1,381 @@
+use ZTaskAns2;
+
+show dbs;
+
+db.createCollection("users");
+db.createCollection("codekata");
+db.createCollection("attendance");
+db.createCollection("topics");
+db.createCollection("tasks");
+db.createCollection("company_drives");
+db.createCollection("mentors");
+
+
+db.users.insertMany ( [ { insert documents } ] ) ;
+db.codekata.insertMany ( [ { insert documents } ] ) ;
+db.attendance.insertMany ( [ { insert documents } ] ) ;
+db.topics.insertMany ( [ { insert documents } ] ) ;
+db.tasks.insertMany ( [ { insert documents } ] ) ;
+db.company_drives.insertMany ( [ { insert documents } ] ) ;
+db.mentors.insertMany ( [ { insert documents } ] ) ;
+
+
+db.users.find();
+db.codekata.find();
+db.attendance.find();
+db.topics.find();
+db.tasks.find();
+db.company_drives.find();
+db.mentors.find();
+
+*************************************************************************************************************************
+
+1.Find all the topics and tasks which are thought in the month of October
+
+db.topics.aggregate([
+  			{$lookup:{
+				 from: "tasks",
+ 				 localField:"topic_id",
+  				 foreignField: "topic_id",
+  				 as: "task"		
+				}
+			},
+			{$match:{
+				$and:[
+   				 	{start_date:{$gte:ISODate('2020-10-01'),$lte:ISODate('2020-10-30')}},
+    					{"task.deadline_date":{$gte:ISODate('2020-10-01'),$lte:ISODate('2020-10-30')}}
+ 				     ]
+				}
+			},
+			{$project:{
+				task_id:0
+				}
+			},
+			{$project:{
+				"task":{"topic_id":0}
+				}
+			}
+			]);
+
+
+o/p:
+
+_id: ObjectId("6579fd86bccb15044ca0446b"),
+  topic_id: 3,
+  topic: 'Bootstrap',
+  description: 'FrameWork',
+  start_date: 2020-10-01T00:00:00.000Z,
+  end_date: 2020-10-30T00:00:00.000Z,
+  task: [
+    {
+      _id: ObjectId("6579fdfebccb15044ca04470"),
+      task_id: 3,
+      topic: 'Bootstrap',
+      description: 'Complete them with responsive design - Food Landing Page using Bootstrap FrameWork',
+      deadline_date: 2020-10-30T00:00:00.000Z
+    }
+  ]
+
+*************************************************************************************************************************
+
+2.Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+
+db.company_drives.aggregate([{$match:
+					    {drive_date:{$gte:ISODate('2020-10-15'),$lte:ISODate('2020-10-31')}}
+				     }]);
+
+
+o/p:
+
+{
+  _id: ObjectId("6579fe86bccb15044ca04475"),
+  user_id: 3,
+  drive_date: 2020-10-16T00:00:00.000Z,
+  company: 'Amazon'
+}
+
+{
+  _id: ObjectId("6579fe86bccb15044ca04476"),
+  user_id: 4,
+  drive_date: 2020-10-25T00:00:00.000Z,
+  company: 'Microsoft'
+}
+
+*************************************************************************************************************************
+
+3.Find all the company drives and students who are appeared for the placement.
+
+db.company_drives.aggregate([
+  				{$lookup:{
+  					from: "users",
+ 						localField:"user_id",
+  					foreignField: "user_id",
+  					as: "student"
+					}
+				},{$project:{
+					userid:0
+					}
+				},{$project:{
+  					student:{_id:0}
+					}
+				}
+				]);
+
+
+o/p:
+
+{
+  _id: ObjectId("6579fe86bccb15044ca04473"),
+  user_id: 1,
+  drive_date: 2020-08-05T00:00:00.000Z,
+  company: 'TCS',
+  student: [
+    {
+      user_id: 1,
+      name: 'Prabhakaran',
+      email: 'karanprabha9600@gmail.com',
+      location: 'Erode'
+    }
+  ]
+}
+
+{
+  _id: ObjectId("6579fe86bccb15044ca04474"),
+  user_id: 2,
+  drive_date: 2020-09-10T00:00:00.000Z,
+  company: 'Infosys',
+  student: [
+    {
+      user_id: 2,
+      name: 'Vijayakumar',
+      email: 'vijayakumar123@gmail.com',
+      location: 'Tiruchengode'
+    }
+  ]
+}
+
+{
+  _id: ObjectId("6579fe86bccb15044ca04475"),
+  user_id: 3,
+  drive_date: 2020-10-16T00:00:00.000Z,
+  company: 'Amazon',
+  student: [
+    {
+      user_id: 3,
+      name: 'Mayilsamy',
+      email: 'mayilsamy9600@gmail.com',
+      location: 'Kunnathur'
+    }
+  ]
+}
+
+{
+  _id: ObjectId("6579fe86bccb15044ca04476"),
+  user_id: 4,
+  drive_date: 2020-10-25T00:00:00.000Z,
+  company: 'Microsoft',
+  student: [
+    {
+      user_id: 4,
+      name: 'Brett Lee',
+      email: 'brettlee456@gmail.com',
+      location: 'Australia'
+    }
+  ]
+}
+
+{
+  _id: ObjectId("6579fe86bccb15044ca04477"),
+  user_id: 5,
+  drive_date: 2020-12-10T00:00:00.000Z,
+  company: 'Accenture',
+  student: [
+    {
+      user_id: 5,
+      name: 'MS Dhoni',
+      email: 'msdhoni9600@gmail.com',
+      location: 'Ranchi'
+    }
+  ]
+}
+
+*************************************************************************************************************************
+
+4.Find the number of problems solved by the user in codekata
+
+db.users.aggregate([
+  				{$lookup:{
+  					from: "codekata",
+  					localField: "user_id",
+  					foreignField: "user_id",
+  					as: "codekata"
+					}
+				},{$project:{
+ 						"codekata":{_id:0,user_id:0}
+					    }
+				}
+				]);
+
+
+o/p:
+
+{
+  _id: ObjectId("6579f9fbbccb15044ca0442d"),
+  user_id: 1,
+  name: 'Prabhakaran',
+  email: 'karanprabha9600@gmail.com',
+  location: 'Erode',
+  codekata: [
+    {
+      user_name: 'Prabhakaran',
+      codekata_solved: 400,
+      webkata_solved: 40
+    }
+  ]
+}
+
+{
+  _id: ObjectId("6579f9fbbccb15044ca0442e"),
+  user_id: 2,
+  name: 'Vijayakumar',
+  email: 'vijayakumar123@gmail.com',
+  location: 'Tiruchengode',
+  codekata: [
+    {
+      user_name: 'Vijayakumar',
+      codekata_solved: 500,
+      webkata_solved: 50
+    }
+  ]
+}
+
+{
+  _id: ObjectId("6579f9fbbccb15044ca0442f"),
+  user_id: 3,
+  name: 'Mayilsamy',
+  email: 'mayilsamy9600@gmail.com',
+  location: 'Kunnathur',
+  codekata: [
+    {
+      user_name: 'Mayilsamy',
+      codekata_solved: 250,
+      webkata_solved: 60
+    }
+  ]
+}
+
+{
+  _id: ObjectId("6579f9fbbccb15044ca04430"),
+  user_id: 4,
+  name: 'Brett Lee',
+  email: 'brettlee456@gmail.com',
+  location: 'Australia',
+  codekata: [
+    {
+      user_name: 'Brett Lee',
+      codekata_solved: 200,
+      webkata_solved: 75
+    }
+  ]
+}
+
+{
+  _id: ObjectId("6579f9fbbccb15044ca04431"),
+  user_id: 5,
+  name: 'MS Dhoni',
+  email: 'msdhoni9600@gmail.com',
+  location: 'Ranchi',
+  codekata: [
+    {
+      user_name: 'MS Dhoni',
+      codekata_solved: 100,
+      webkata_solved: 100
+    }
+  ]
+}
+
+*************************************************************************************************************************
+
+5.Find all the mentors with who has the mentee's count more than 15
+
+db.mentors.aggregate([
+  				{$match:{
+ 					mentees:{$gt:15}
+				}},{$project:{
+					_id:0
+				}}
+				]);
+
+
+o/p:
+
+{
+  mentor_id: 1,
+  mentor_name: 'Mr.Rupan',
+  mentees: 75
+}
+
+{
+  mentor_id: 2,
+  mentor_name: 'Mr.Ramesh',
+  mentees: 25
+}
+
+{
+  mentor_id: 4,
+  mentor_name: 'Mr.Kirubarani',
+  mentees: 90
+}
+
+{
+  mentor_id: 7,
+  mentor_name: 'Mr.Thangavel',
+  mentees: 99
+}
+
+*************************************************************************************************************************
+
+6.Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
+
+db.attendance.aggregate([
+  {
+    $match: {
+      "Class_date": {
+        $gte: ISODate("2020-10-15"),
+        $lte: ISODate("2020-10-31")
+      },
+      "attendance": false
+    }
+  },
+  {
+    $lookup: {
+      from: "tasks",
+      localField: "user_id",
+      foreignField: "user_id",
+      as: "tasks"
+    }
+  },
+  {
+    $match: {
+      "tasks": { $eq: [] }
+    }
+  },
+  {
+    $group: {
+      _id: "$user_id",
+      count: { $sum: 1 }
+    }
+  },
+  {
+    $count: "totalUsersAbsentWithNoTasks"
+  }
+]);
+
+
+o/p:
+
+{
+  totalUsersAbsentWithNoTasks: 3
+}
+
+*************************************************************************************************************************

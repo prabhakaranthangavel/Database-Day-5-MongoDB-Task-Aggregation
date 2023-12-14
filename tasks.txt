@@ -1,0 +1,48 @@
+tasks = 
+
+(
+    
+[
+
+    {
+    "topic_id":1,
+    "task_id":1,
+    "topic":"JavaScript",
+    "description":"Print odd numbers in an array using arrow functions",
+    "deadline_date":ISODate("2020-08-30")
+    },
+
+    {
+    "topic_id":2,
+    "task_id":2,
+    "topic":"HTML & CSS",
+    "description":"Complete them with responsive design - Travel Landing Page using HTML & CSS",
+    "deadline_date":ISODate("2020-09-30")
+    },
+
+    {
+    "topic_id":3,
+    "task_id":3,
+    "topic":"Bootstrap",
+    "description":"Complete them with responsive design - Food Landing Page using Bootstrap FrameWork",
+    "deadline_date":ISODate("2020-10-30")
+    },
+
+    {
+    "topic_id":4,
+    "task_id":4,
+    "topic":"React",
+    "description":"Create a Todo App which have All CRUD Functionalities using React Todo Task",
+    "deadline_date":ISODate("2020-11-30")
+    },
+
+    {
+    "topic_id": 5,
+    "task_id": 5,
+    "topic": "MongoDB",
+    "description": "MongoDB - Design database for Zen class programme",
+    "deadline_date":ISODate("2020-12-30")
+    }
+]
+
+);

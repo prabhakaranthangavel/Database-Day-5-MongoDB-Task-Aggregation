@@ -1,0 +1,48 @@
+users = 
+
+(
+
+[
+
+    { 
+        "user_id": 1, 
+        "name": "Prabhakaran", 
+        "email": "karanprabha9600@gmail.com", 
+        "location": "Erode" 
+
+    },
+
+    { 
+        "user_id": 2, 
+        "name": "Vijayakumar", 
+        "email": "vijayakumar123@gmail.com",  
+        "location": "Tiruchengode" 
+
+    },
+
+    { 
+        "user_id": 3, 
+        "name": "Mayilsamy", 
+        "email": "mayilsamy9600@gmail.com", 
+        "location": "Kunnathur" 
+
+    },
+
+    { 
+        "user_id": 4, 
+        "name": "Brett Lee", 
+        "email": "brettlee456@gmail.com",  
+        "location": "Australia" 
+
+    },
+
+    { 
+        "user_id": 5, 
+        "name": "MS Dhoni", 
+        "email": "msdhoni9600@gmail.com",  
+        "location": "Ranchi" 
+
+    }
+]
+
+);

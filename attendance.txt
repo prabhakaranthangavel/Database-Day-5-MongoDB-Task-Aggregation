@@ -1,0 +1,316 @@
+attendance = 
+
+(
+    
+[
+
+{
+  "user_id":1,
+  "Class_date":ISODate("2020-08-07"),
+  "attendance":true
+},
+
+{
+  "user_id":1,
+  "Class_date":ISODate("2020-08-08"),
+  "attendance":true
+},
+
+{
+  "user_id":1,
+  "Class_date":ISODate("2020-09-14"),
+  "attendance":true
+},
+
+{
+  "user_id":1,
+  "Class_date":ISODate("2020-09-15"),
+  "attendance":true
+},
+
+{
+  "user_id":1,
+  "Class_date":ISODate("2020-10-21"),
+  "attendance":false
+},
+
+{
+  "user_id":1,
+  "Class_date":ISODate("2020-10-22"),
+  "attendance":true
+},
+
+{
+  "user_id":1,
+  "Class_date":ISODate("2020-11-28"),
+  "attendance":true
+},
+
+{
+  "user_id":1,
+  "Class_date":ISODate("2020-11-29"),
+  "attendance":true
+},
+
+{
+  "user_id":1,
+  "Class_date":ISODate("2020-12-05"),
+  "attendance":true
+},
+
+{
+  "user_id":1,
+  "Class_date":ISODate("2020-12-06"),
+  "attendance":true
+},
+
+
+
+{
+  "user_id":2,
+  "Class_date":ISODate("2020-08-07"),
+  "attendance":true
+},
+
+{
+  "user_id":2,
+  "Class_date":ISODate("2020-08-08"),
+  "attendance":true
+},
+
+{
+  "user_id":2,
+  "Class_date":ISODate("2020-09-14"),
+  "attendance":true
+},
+
+{
+  "user_id":2,
+  "Class_date":ISODate("2020-09-15"),
+  "attendance":false
+},
+
+{
+  "user_id":2,
+  "Class_date":ISODate("2020-10-21"),
+  "attendance":true
+},
+
+{
+  "user_id":2,
+  "Class_date":ISODate("2020-10-22"),
+  "attendance":true
+},
+
+{
+  "user_id":2,
+  "Class_date":ISODate("2020-11-28"),
+  "attendance":true
+},
+
+{
+  "user_id":2,
+  "Class_date":ISODate("2020-11-29"),
+  "attendance":true
+},
+
+{
+  "user_id":2,
+  "Class_date":ISODate("2020-12-05"),
+  "attendance":true
+},
+
+{
+  "user_id":2,
+  "Class_date":ISODate("2020-12-06"),
+  "attendance":false
+},
+
+
+
+{
+  "user_id":3,
+  "Class_date":ISODate("3023-08-07"),
+  "attendance":true
+},
+
+{
+  "user_id":3,
+  "Class_date":ISODate("2020-08-08"),
+  "attendance":true
+},
+
+{
+  "user_id":3,
+  "Class_date":ISODate("2020-09-14"),
+  "attendance":true
+},
+
+{
+  "user_id":3,
+  "Class_date":ISODate("2020-09-15"),
+  "attendance":false
+},
+
+{
+  "user_id":3,
+  "Class_date":ISODate("2020-10-21"),
+  "attendance":false
+},
+
+{
+  "user_id":3,
+  "Class_date":ISODate("2020-10-22"),
+  "attendance":true
+},
+
+{
+  "user_id":3,
+  "Class_date":ISODate("2020-11-28"),
+  "attendance":true
+},
+
+{
+  "user_id":3,
+  "Class_date":ISODate("2020-11-29"),
+  "attendance":false
+},
+
+{
+  "user_id":3,
+  "Class_date":ISODate("2020-12-05"),
+  "attendance":true
+},
+
+{
+  "user_id":3,
+  "Class_date":ISODate("2020-12-06"),
+  "attendance":true
+},
+
+
+
+{
+  "user_id":4,
+  "Class_date":ISODate("2020-08-07"),
+  "attendance":true
+},
+
+{
+  "user_id":4,
+  "Class_date":ISODate("2020-08-08"),
+  "attendance":true
+},
+
+{
+  "user_id":4,
+  "Class_date":ISODate("2020-09-14"),
+  "attendance":true
+},
+
+{
+  "user_id":4,
+  "Class_date":ISODate("2020-09-15"),
+  "attendance":true
+},
+
+{
+  "user_id":4,
+  "Class_date":ISODate("2020-10-21"),
+  "attendance":true
+},
+
+{
+  "user_id":4,
+  "Class_date":ISODate("2020-10-22"),
+  "attendance":true
+},
+
+{
+  "user_id":4,
+  "Class_date":ISODate("2020-11-28"),
+  "attendance":true
+},
+
+{
+  "user_id":4,
+  "Class_date":ISODate("2020-11-29"),
+  "attendance":true
+},
+
+{
+  "user_id":4,
+  "Class_date":ISODate("2020-12-05"),
+  "attendance":true
+},
+
+{
+  "user_id":4,
+  "Class_date":ISODate("2020-12-06"),
+  "attendance":true
+},
+
+
+
+{
+  "user_id":5,
+  "Class_date":ISODate("2020-08-07"),
+  "attendance":false
+},
+
+{
+  "user_id":5,
+  "Class_date":ISODate("2020-08-08"),
+  "attendance":true
+},
+
+{
+  "user_id":5,
+  "Class_date":ISODate("2020-09-14"),
+  "attendance":true
+},
+
+{
+  "user_id":5,
+  "Class_date":ISODate("2020-09-15"),
+  "attendance":true
+},
+
+{
+  "user_id":5,
+  "Class_date":ISODate("2020-10-21"),
+  "attendance":false
+},
+
+{
+  "user_id":5,
+  "Class_date":ISODate("2020-10-22"),
+  "attendance":true
+},
+
+{
+  "user_id":5,
+  "Class_date":ISODate("2020-11-28"),
+  "attendance":false
+},
+
+{
+  "user_id":5,
+  "Class_date":ISODate("2020-11-29"),
+  "attendance":true
+},
+
+{
+  "user_id":5,
+  "Class_date":ISODate("2020-12-05"),
+  "attendance":false
+},
+
+{
+  "user_id":5,
+  "Class_date":ISODate("2020-12-06"),
+  "attendance":false
+}
+]
+
+);

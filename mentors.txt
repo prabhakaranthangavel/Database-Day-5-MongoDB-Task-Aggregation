@@ -1,0 +1,50 @@
+mentors = 
+
+(
+    
+[
+
+    { 
+    mentor_id: 1, 
+    mentor_name: 'Mr.Rupan', 
+    mentees: 75 
+    },
+
+    { 
+    mentor_id: 2, 
+    mentor_name: 'Mr.Ramesh', 
+    mentees: 25 
+    },
+
+    { 
+    mentor_id: 3, 
+    mentor_name: 'Mr.Arivoli', 
+    mentees: 50 
+    },
+
+    { 
+    mentor_id: 4, 
+    mentor_name: 'Mr.Kirubarani', 
+    mentees: 90 
+    },
+
+    { 
+    mentor_id: 5, 
+    mentor_name: 'Mr.Kalaiselvi', 
+    mentees: 40 
+    },
+
+    { 
+    mentor_id: 6, 
+    mentor_name: 'Mr.Revathi', 
+    mentees: 05 
+    },
+
+    { 
+    mentor_id: 7, 
+    mentor_name: 'Mr.Thangavel', 
+    mentees: 99 
+    }
+]
+
+);

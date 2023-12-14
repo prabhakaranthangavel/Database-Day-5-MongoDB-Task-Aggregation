@@ -1,0 +1,38 @@
+company_drives = 
+
+(
+    
+[
+
+    {
+      user_id:1,
+      drive_date:ISODate("2020-08-05"),
+      company:"TCS"
+    },
+
+    {
+      user_id:2,
+      drive_date:ISODate("2020-09-10"),
+      company:"Infosys"
+    },
+
+    {
+      user_id:3,
+      drive_date:ISODate("2020-10-16"),
+      company:"Amazon"
+    },
+
+    {
+      user_id:4,
+      drive_date:ISODate("2020-10-25"),
+      company:"Microsoft"
+    },
+
+    {
+      user_id:5,
+      drive_date:ISODate("2020-12-10"),
+      company:"Accenture"
+    }
+]
+
+);

@@ -1,0 +1,53 @@
+topics =
+
+(
+
+[
+    
+    {
+    "topic_id":1,
+    "task_id":1,
+    "topic":"JavaScript",
+    "description":"Functionality",
+    "start_date":ISODate("2020-08-01"),
+    "end_date":ISODate("2020-08-30")
+  },
+
+  {
+    "topic_id":2,
+    "task_id":2,
+    "topic":"HTML & CSS",
+    "description":"Styling",
+    "start_date":ISODate("2020-09-01"),
+    "end_date":ISODate("2020-09-30")
+  },
+
+  {
+    "topic_id":3,
+    "task_id":3,
+    "topic":"Bootstrap",
+    "description":"FrameWork",
+    "start_date":ISODate("2020-10-01"),
+    "end_date":ISODate("2020-10-30")
+  },
+
+  {
+    "topic_id":4,
+    "task_id":4,
+    "topic":"React",
+    "description":"FrontEnd",
+    "start_date":ISODate("2020-11-01"),
+    "end_date":ISODate("2020-11-30")
+  },
+
+  {
+    "topic_id": 5,
+    "task_id":5,
+    "topic": "MongoDB",
+    "description": "BackEnd",
+    "start_date":ISODate("2020-12-01"),
+    "end_date":ISODate("2020-12-30")
+  }
+]
+
+);
